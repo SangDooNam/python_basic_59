@@ -8,15 +8,14 @@ def find(word: str, text: str) -> int:
     word_len = len(word)
     index = -1
     found = False
-    while not found:
+    while index < len(text) and not found:
         index += 1
         if text[index:index+word_len] == word:
             found = True
     if found:
         return index
     else:
-        return index
-
+        return index - (len(text) + 1)
 
 
 # from random import randrange
